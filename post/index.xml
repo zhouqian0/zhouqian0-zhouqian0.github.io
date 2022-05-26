@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Zhouqian Blog</title>
+    <link>https://zhouqian0.github.io/post/</link>
+    <description>Recent content in Posts on Zhouqian Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 日常命令 — find</title>
+      <link>https://zhouqian0.github.io/2022/05/25/linux/find/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/25/linux/find/</guid>
+      <description>介绍 find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。 如果使用该命令时，不设置任何参数，则 find 命令将在当前目录</description>
+    </item>
+    
+    <item>
+      <title>工作区和GOPATH</title>
+      <link>https://zhouqian0.github.io/2022/05/25/install-source/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/25/install-source/</guid>
+      <description>环境介绍 通过 docker image 创建的 container。 通过命令 docker run -it golang 启动容器。 容器使用 Go 版本：v1.18.2 linux/amd64 GOROOT GO 语言的安装路径。 GOPATH Go 的工作目录，值为</description>
+    </item>
+    
+    <item>
+      <title>Linux 日常命令 — df</title>
+      <link>https://zhouqian0.github.io/2022/05/18/linux/df/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/18/linux/df/</guid>
+      <description>介绍 df（disk free）：用于显示在 Linux 系统上的文件系统磁盘使用情况统计。 如果命令未指定目录，则默认展示当前被挂载的文件系统的可用空间（单</description>
+    </item>
+    
+    <item>
+      <title>Linux 日常命令 — du</title>
+      <link>https://zhouqian0.github.io/2022/05/18/linux/du/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/18/linux/du/</guid>
+      <description>介绍 du（disk usage）：用于显示指定的目录或文件所占用的磁盘空间。 如果命令未指定目录，则默认展示当前目录的文件磁盘使用情况（单位 kb</description>
+    </item>
+    
+    <item>
+      <title>Linux 磁盘占用分析</title>
+      <link>https://zhouqian0.github.io/2022/05/18/disk/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/18/disk/</guid>
+      <description>磁盘相关命令 df du 大文件占用查找思路 使用 df -Th 找到希望查找的目录中磁盘占用最大的目录。 [root@iZuf6cdrrzbsjtp7kwq6haZ ~]# df -Th Filesystem Type Size Used Avail Use% Mounted on devtmpfs devtmpfs 387M 0 387M 0% /dev tmpfs tmpfs 405M 0 405M 0% /dev/shm tmpfs tmpfs 405M</description>
+    </item>
+    
+    <item>
+      <title>Go 语言介绍</title>
+      <link>https://zhouqian0.github.io/2022/05/17/intro/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/17/intro/</guid>
+      <description>Go 语言简介 Go 语言是 Google 开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。 Go 语言优势 可以用作构建快速、可靠、高效的规模化软件，</description>
+    </item>
+    
+  </channel>
+</rss>

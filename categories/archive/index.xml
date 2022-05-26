@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archive on Zhouqian Blog</title>
+    <link>https://zhouqian0.github.io/categories/archive/</link>
+    <description>Recent content in Archive on Zhouqian Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/categories/archive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 日常命令 — find</title>
+      <link>https://zhouqian0.github.io/2022/05/25/linux/find/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/25/linux/find/</guid>
+      <description>介绍 find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。 如果使用该命令时，不设置任何参数，则 find 命令将在当前目录</description>
+    </item>
+    
+    <item>
+      <title>Linux 日常命令 — df</title>
+      <link>https://zhouqian0.github.io/2022/05/18/linux/df/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/18/linux/df/</guid>
+      <description>介绍 df（disk free）：用于显示在 Linux 系统上的文件系统磁盘使用情况统计。 如果命令未指定目录，则默认展示当前被挂载的文件系统的可用空间（单</description>
+    </item>
+    
+    <item>
+      <title>Linux 日常命令 — du</title>
+      <link>https://zhouqian0.github.io/2022/05/18/linux/du/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/18/linux/du/</guid>
+      <description>介绍 du（disk usage）：用于显示指定的目录或文件所占用的磁盘空间。 如果命令未指定目录，则默认展示当前目录的文件磁盘使用情况（单位 kb</description>
+    </item>
+    
+  </channel>
+</rss>

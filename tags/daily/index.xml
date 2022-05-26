@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daily on Zhouqian Blog</title>
+    <link>https://zhouqian0.github.io/tags/daily/</link>
+    <description>Recent content in Daily on Zhouqian Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 磁盘占用分析</title>
+      <link>https://zhouqian0.github.io/2022/05/18/disk/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/18/disk/</guid>
+      <description>磁盘相关命令 df du 大文件占用查找思路 使用 df -Th 找到希望查找的目录中磁盘占用最大的目录。 [root@iZuf6cdrrzbsjtp7kwq6haZ ~]# df -Th Filesystem Type Size Used Avail Use% Mounted on devtmpfs devtmpfs 387M 0 387M 0% /dev tmpfs tmpfs 405M 0 405M 0% /dev/shm tmpfs tmpfs 405M</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Zhouqian Blog</title>
+    <link>https://zhouqian0.github.io/tags/golang/</link>
+    <description>Recent content in Golang on Zhouqian Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工作区和GOPATH</title>
+      <link>https://zhouqian0.github.io/2022/05/25/install-source/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/25/install-source/</guid>
+      <description>环境介绍 通过 docker image 创建的 container。 通过命令 docker run -it golang 启动容器。 容器使用 Go 版本：v1.18.2 linux/amd64 GOROOT GO 语言的安装路径。 GOPATH Go 的工作目录，值为</description>
+    </item>
+    
+    <item>
+      <title>Go 语言介绍</title>
+      <link>https://zhouqian0.github.io/2022/05/17/intro/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/2022/05/17/intro/</guid>
+      <description>Go 语言简介 Go 语言是 Google 开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。 Go 语言优势 可以用作构建快速、可靠、高效的规模化软件，</description>
+    </item>
+    
+  </channel>
+</rss>

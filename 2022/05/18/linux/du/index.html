@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Zhouqian Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg">
+    <meta property="twitter:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg" />
+    
+
+    
+    <meta name="title" content="Linux 日常命令 — du" />
+    <meta property="og:title" content="Linux 日常命令 — du" />
+    <meta property="twitter:title" content="Linux 日常命令 — du" />
+    
+
+    
+    <meta name="description" content="记录日常使用的和查找相关的 Linux 命令">
+    <meta property="og:description" content="记录日常使用的和查找相关的 Linux 命令" />
+    <meta property="twitter:description" content="记录日常使用的和查找相关的 Linux 命令" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Linux 日常命令 — du | Zhouqian 的博客</title>
+
+    <link rel="canonical" href="/2022/05/18/linux/du/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Zhouqian Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/archive">archive</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/daily">daily</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/golang">golang</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/archive/linux-command/bg-header.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/linux" title="Linux">
+                            Linux
+                        </a>
+                        
+                    </div>
+                    <h1>Linux 日常命令 — du</h1>
+                    <h2 class="subheading">Linux 日常命令归档</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                zhouqian
+                             
+                            on 
+                            Wednesday, May 18, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="介绍">介绍</h3>
+<p><strong>du（disk usage）：用于显示指定的目录或文件所占用的磁盘空间。</strong></p>
+<p>如果命令未指定目录，则默认展示当前目录的文件磁盘使用情况（单位 kb）。</p>
+<h3 id="常用参数">常用参数</h3>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>统计目录下所有的文件</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>使用人们习惯的 KB、MB 或 GB 等单位自行显示容量</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>以 KB 为单位显示容量，默认以 KB 为单位</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>以 MB 为单位显示容量</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>仅显示总计</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>在显示个别目录或文件的大小外，也显示所有目录或文件的总和。</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>限定允许展示的子目录深度</td>
+</tr>
+<tr>
+<td>&ndash;exclude</td>
+<td>排除指定的文件（支持通配符）</td>
+</tr>
+<tr>
+<td>&ndash;time</td>
+<td>格式化目录文件的修改时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="示例">示例</h3>
+<h4 id="展示当前目录的磁盘使用情况单位-kb">展示当前目录的磁盘使用情况，单位 kb</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du
+4	./.pip
+4	./.cache/pip/http/f/e/d/0/e
+4	./.cache/pip/http/f/e/d/0
+4	./.cache/pip/http/f/e/d
+4	./.cache/pip/http/f/e
+4	./.cache/pip/http/f
+36	./.cache/pip/http/b/b/8/7/6
+36	./.cache/pip/http/b/b/8/7
+36	./.cache/pip/http/b/b/8
+36	./.cache/pip/http/b/b
+36	./.cache/pip/http/b
+40	./.cache/pip/http
+44	./.cache/pip
+44	./.cache
+0	./.ssh
+76	.
+</code></pre><h4 id="以易阅读的形式展示当前目录磁盘使用情况">以易阅读的形式展示当前目录磁盘使用情况</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -h
+4.0K	./.pip
+4.0K	./.cache/pip/http/f/e/d/0/e
+4.0K	./.cache/pip/http/f/e/d/0
+4.0K	./.cache/pip/http/f/e/d
+4.0K	./.cache/pip/http/f/e
+4.0K	./.cache/pip/http/f
+36K	./.cache/pip/http/b/b/8/7/6
+36K	./.cache/pip/http/b/b/8/7
+36K	./.cache/pip/http/b/b/8
+36K	./.cache/pip/http/b/b
+36K	./.cache/pip/http/b
+40K	./.cache/pip/http
+44K	./.cache/pip
+44K	./.cache
+0	./.ssh
+76K	.
+</code></pre><h4 id="展示当前目录的总磁盘使用情况">展示当前目录的总磁盘使用情况</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -sh
+76K	.
+</code></pre><h4 id="展示当前目录所有文件和子目录的总磁盘使用情况">展示当前目录所有文件和子目录的总磁盘使用情况</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -ah
+4.0K	./.bash_logout
+4.0K	./.bash_profile
+4.0K	./.bashrc
+4.0K	./.cshrc
+4.0K	./.tcshrc
+4.0K	./.pydistutils.cfg
+4.0K	./.pip/pip.conf
+4.0K	./.pip
+4.0K	./.cache/pip/http/f/e/d/0/e/fed0ed508030b766d5b0c2792132c8bf197804464765b46b361f93a4
+4.0K	./.cache/pip/http/f/e/d/0/e
+4.0K	./.cache/pip/http/f/e/d/0
+4.0K	./.cache/pip/http/f/e/d
+4.0K	./.cache/pip/http/f/e
+4.0K	./.cache/pip/http/f
+36K	./.cache/pip/http/b/b/8/7/6/bb876b2e6a22c2739002e9ef3388ae978b7a6192a19fe67d8b0030f2
+36K	./.cache/pip/http/b/b/8/7/6
+36K	./.cache/pip/http/b/b/8/7
+36K	./.cache/pip/http/b/b/8
+36K	./.cache/pip/http/b/b
+36K	./.cache/pip/http/b
+40K	./.cache/pip/http
+4.0K	./.cache/pip/selfcheck.json
+44K	./.cache/pip
+44K	./.cache
+0	./.ssh/authorized_keys
+0	./.ssh
+4.0K	./.bash_history
+76K	.
+</code></pre><h4 id="以-kb-为单位展示目录的磁盘使用情况">以 KB 为单位展示目录的磁盘使用情况</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -k
+4	./.pip
+4	./.cache/pip/http/f/e/d/0/e
+4	./.cache/pip/http/f/e/d/0
+4	./.cache/pip/http/f/e/d
+4	./.cache/pip/http/f/e
+4	./.cache/pip/http/f
+36	./.cache/pip/http/b/b/8/7/6
+36	./.cache/pip/http/b/b/8/7
+36	./.cache/pip/http/b/b/8
+36	./.cache/pip/http/b/b
+36	./.cache/pip/http/b
+40	./.cache/pip/http
+44	./.cache/pip
+44	./.cache
+0	./.ssh
+76	.
+</code></pre><h4 id="以-mb-为单位展示目录的磁盘使用情况">以 MB 为单位展示目录的磁盘使用情况</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -m
+1	./.pip
+1	./.cache/pip/http/f/e/d/0/e
+1	./.cache/pip/http/f/e/d/0
+1	./.cache/pip/http/f/e/d
+1	./.cache/pip/http/f/e
+1	./.cache/pip/http/f
+1	./.cache/pip/http/b/b/8/7/6
+1	./.cache/pip/http/b/b/8/7
+1	./.cache/pip/http/b/b/8
+1	./.cache/pip/http/b/b
+1	./.cache/pip/http/b
+1	./.cache/pip/http
+1	./.cache/pip
+1	./.cache
+0	./.ssh
+1	.
+</code></pre><h4 id="展示当前目录的磁盘使用情况并显示总计值">展示当前目录的磁盘使用情况，并显示总计值</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -ch
+4.0K	./.pip
+4.0K	./.cache/pip/http/f/e/d/0/e
+4.0K	./.cache/pip/http/f/e/d/0
+4.0K	./.cache/pip/http/f/e/d
+4.0K	./.cache/pip/http/f/e
+4.0K	./.cache/pip/http/f
+36K	./.cache/pip/http/b/b/8/7/6
+36K	./.cache/pip/http/b/b/8/7
+36K	./.cache/pip/http/b/b/8
+36K	./.cache/pip/http/b/b
+36K	./.cache/pip/http/b
+40K	./.cache/pip/http
+44K	./.cache/pip
+44K	./.cache
+0	./.ssh
+76K	.
+76K	total
+</code></pre><h4 id="展示当前目录中文件和子目录的磁盘使用情况排除指定文件类型">展示当前目录中文件和子目录的磁盘使用情况，排除指定文件类型</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -ah --exclude=&#34;*.txt&#34;
+4.0K	./.bash_logout
+4.0K	./.bash_profile
+4.0K	./.bashrc
+4.0K	./.cshrc
+4.0K	./.tcshrc
+4.0K	./.pydistutils.cfg
+4.0K	./.pip/pip.conf
+4.0K	./.pip
+4.0K	./.cache/pip/http/f/e/d/0/e/fed0ed508030b766d5b0c2792132c8bf197804464765b46b361f93a4
+4.0K	./.cache/pip/http/f/e/d/0/e
+4.0K	./.cache/pip/http/f/e/d/0
+4.0K	./.cache/pip/http/f/e/d
+4.0K	./.cache/pip/http/f/e
+4.0K	./.cache/pip/http/f
+36K	./.cache/pip/http/b/b/8/7/6/bb876b2e6a22c2739002e9ef3388ae978b7a6192a19fe67d8b0030f2
+36K	./.cache/pip/http/b/b/8/7/6
+36K	./.cache/pip/http/b/b/8/7
+36K	./.cache/pip/http/b/b/8
+36K	./.cache/pip/http/b/b
+36K	./.cache/pip/http/b
+40K	./.cache/pip/http
+4.0K	./.cache/pip/selfcheck.json
+44K	./.cache/pip
+44K	./.cache
+0	./.ssh/authorized_keys
+0	./.ssh
+4.0K	./.bash_history
+76K	.
+</code></pre><h4 id="展示当前目录所有自目录的磁盘使用情况并显示最近修改时间">展示当前目录所有自目录的磁盘使用情况，并显示最近修改时间</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -h --time
+4.0K	2022-05-18 10:01	./.pip
+4.0K	2022-04-28 18:17	./.cache/pip/http/f/e/d/0/e
+4.0K	2022-04-28 18:17	./.cache/pip/http/f/e/d/0
+4.0K	2022-04-28 18:17	./.cache/pip/http/f/e/d
+4.0K	2022-04-28 18:17	./.cache/pip/http/f/e
+4.0K	2022-04-28 18:17	./.cache/pip/http/f
+36K	2022-04-28 18:17	./.cache/pip/http/b/b/8/7/6
+36K	2022-04-28 18:17	./.cache/pip/http/b/b/8/7
+36K	2022-04-28 18:17	./.cache/pip/http/b/b/8
+36K	2022-04-28 18:17	./.cache/pip/http/b/b
+36K	2022-04-28 18:17	./.cache/pip/http/b
+40K	2022-04-28 18:17	./.cache/pip/http
+44K	2022-04-28 18:17	./.cache/pip
+44K	2022-04-28 18:17	./.cache
+0	2022-05-18 10:01	./.ssh
+76K	2022-05-18 13:35	.
+</code></pre><h4 id="限制子目录深度展示当前目录下子目录的磁盘使用情况">限制子目录深度展示当前目录下子目录的磁盘使用情况</h4>
+<pre tabindex="0"><code>[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -hd1
+4.0K	./.pip
+44K	./.cache
+0	./.ssh
+76K	.
+[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -hd2
+4.0K	./.pip
+44K	./.cache/pip
+44K	./.cache
+0	./.ssh
+76K	.
+[root@iZuf6cdrrzbsjtp7kwq6haZ ~]# du -hd3
+4.0K	./.pip
+40K	./.cache/pip/http
+44K	./.cache/pip
+44K	./.cache
+0	./.ssh
+76K	.
+</code></pre>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2022/05/18/disk/" data-toggle="tooltip" data-placement="top" title="Linux 磁盘占用分析">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/05/18/linux/df/" data-toggle="tooltip" data-placement="top" title="Linux 日常命令 — df">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/golang" title="golang">
+                            golang
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Zhouqian Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

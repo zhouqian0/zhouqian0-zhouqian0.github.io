@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Zhouqian Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg">
+    <meta property="twitter:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg" />
+    
+
+    
+    <meta name="title" content="Go 语言介绍" />
+    <meta property="og:title" content="Go 语言介绍" />
+    <meta property="twitter:title" content="Go 语言介绍" />
+    
+
+    
+    <meta name="description" content="Go 语言是 Google 开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。">
+    <meta property="og:description" content="Go 语言是 Google 开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。" />
+    <meta property="twitter:description" content="Go 语言是 Google 开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Go 语言介绍 | Zhouqian 的博客</title>
+
+    <link rel="canonical" href="/2022/05/17/intro/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Zhouqian Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/archive">archive</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/daily">daily</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/golang">golang</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/2022-05-17-intro/bg-header.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/golang" title="Golang">
+                            Golang
+                        </a>
+                        
+                    </div>
+                    <h1>Go 语言介绍</h1>
+                    <h2 class="subheading">Go 语言简单介绍</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                zhouqian
+                             
+                            on 
+                            Tuesday, May 17, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="go-语言简介">Go 语言简介</h2>
+<p><strong>Go 语言是 Google 开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。</strong></p>
+<h2 id="go-语言优势">Go 语言优势</h2>
+<p>可以用作构建快速、可靠、高效的规模化软件，并且具有如下四点优势：</p>
+<ol>
+<li>易于学习和入门</li>
+<li>快速编译，高效执行</li>
+<li>内置并发</li>
+<li>强大的跨平台部署能力</li>
+</ol>
+<h3 id="易于学习和入门">易于学习和入门</h3>
+<p>Go 语言和 C/C++ 一样同属 C 系，但 Go 语言在极大程度上简化了 C/C++ 语法，
+使得 Go 在效率上几乎与 C/C++ 一样高效，语法上几乎同 Ruby、Python 之类的语言一样简单。
+
+  <img src="/img/2022-05-17-intro/easy-learn.png" alt="">
+
+</p>
+<h3 id="快速编译高效执行">快速编译，高效执行</h3>
+<p>在使用 Java 或其他基于 JVM 的语言编译项目、构建应用程序时，
+代码会先被编译为能被 JVM 或运行在底层操作系统之上的其他虚拟机可以理解的字节码。
+在程序执行时，Virtual Machines 解释这些字节码并将它们转换为处理器可以理解的二进制文件。</p>
+<p>
+  <img src="/img/2022-05-17-intro/compile-with-vm.png" alt="">
+
+</p>
+<p>但如 Go、C/C++ 之类的语言无需通过 VM 执行，从执行周期中删除了一个步骤，它直接将代码编译为二进制文件，提高了性能。</p>
+<p>
+  <img src="/img/2022-05-17-intro/compile-without-vm.png" alt="">
+
+</p>
+<p>并且 Go 提供了<a href="https://talks.golang.org/2012/splash.article#TOC_5.">一种用于软件构建的模型</a>，该模型使依赖关系分析变得容易，
+并避免了 C 样式包含文件和库的大量开销。</p>
+<h3 id="内置并发">内置并发</h3>
+<p>Go 中倡导使用的 CSP（communicating sequential processes）通信顺序进程模型，
+其核心思想是 <code>不要以共享内存的方式来通信，而是要通过通信来共享内存</code>。</p>
+<blockquote>
+<p>CSP 中并发实体是独立的，它们之间没有共享的内存空间。并发实体之间的数据交换通过通道实现，无论在通道中放数据还是从通道中取数据，
+都会导致并发实体的阻塞，直到通道中的数据被取出或者通道中被放入新的数据，并发实体通过这种方式实现同步。</p>
+</blockquote>
+<p>Go语言的并发基于 goroutine（一种虚拟线程），在程序运行时会参与调度 goroutine，
+并将 goroutine 合理地分配到每个 CPU 中，最大限度地使用 CPU 性能。</p>
+<p>多个 goroutine 中，Go语言使用 channel（内置通道）进行通信，可以让用户在不同的 goroutine 之间同步发送具有类型的消息。
+这让编程模型更倾向于在 goroutine 之间发送消息，而不是让多个 goroutine 争夺同一个数据的使用权。</p>
+<p>
+  <img src="/img/2022-05-17-intro/concurrent.png" alt="">
+
+</p>
+<h2 id="强大的跨平台部署能力">强大的跨平台部署能力</h2>
+<p>Go 可以直接编译成二进制机器码运行，并且支持十四种不同类型的操作系统的交叉编译。</p>
+<pre tabindex="0"><code>❯ go tool dist list
+aix/ppc64
+android/386
+android/amd64
+android/arm
+android/arm64
+darwin/amd64
+darwin/arm64
+dragonfly/amd64
+freebsd/386
+freebsd/amd64
+freebsd/arm
+freebsd/arm64
+illumos/amd64
+ios/amd64
+ios/arm64
+js/wasm
+linux/386
+linux/amd64
+linux/arm
+linux/arm64
+linux/mips
+linux/mips64
+linux/mips64le
+linux/mipsle
+linux/ppc64
+linux/ppc64le
+linux/riscv64
+linux/s390x
+netbsd/386
+netbsd/amd64
+netbsd/arm
+netbsd/arm64
+openbsd/386
+openbsd/amd64
+openbsd/arm
+openbsd/arm64
+openbsd/mips64
+plan9/386
+plan9/amd64
+plan9/arm
+solaris/amd64
+windows/386
+windows/amd64
+windows/arm
+windows/arm64
+</code></pre><h2 id="go-语言使用案例">Go 语言使用案例</h2>
+<p>得益于 Go 语言的种种优势，使得 Go 语言在如下四个方向有着更好的发展：</p>
+<ol>
+<li>云和网络服务</li>
+<li>命令行程序</li>
+<li>Web 编程</li>
+<li>开发运营和站点可靠性工程</li>
+</ol>
+<h3 id="云和网络服务">云和网络服务</h3>
+<p>Go 的创建正是为了满足这些扩展应用程序、微服务和云开发的并发需求。</p>
+<p>事实上，<a href="https://jimmysong.io/kubernetes-handbook/cloud-native/cncf.html">云原生计算基金会(CNCF)</a>中超过 75% 的项目都是用 Go 编写的。
+得益于 Go 的快速构建，高效执行，其可以在 pay-as-you-go 和 serverless deployments 中运行成本更低。</p>
+<p>并且Go 提供标准惯用 API，并内置并发性以利用多核处理器，使得 Go 在性能和生产力之间取得了很好的平衡。</p>
+<h3 id="命令行程序">命令行程序</h3>
+<p>Go 可以快速地编译程序成单个二进制文件，以一致的风格跨平台工作，并带来强大的开发社区。
+Go 编写的程序目前可以在任何系统上运行，而不需要任何现有的库、运行时或依赖项。</p>
+<h3 id="web-编程">Web 编程</h3>
+<p>Go 出色的跨平台部署能力搭配上其开箱即用的特性使得 Go 可以快速且可扩展的对 Web 应用程序提供支持。</p>
+<h3 id="开发运营和站点可靠性工程">开发运营和站点可靠性工程</h3>
+<p>凭借快速的构建时间、精益的语法、自动格式化程序和文档生成器，Go 可以非常好的支持 DevOps 和 SRE。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://go.dev">Go 官方网站</a></li>
+<li><a href="https://www.codementor.io/@kevalpatel2106/why-should-you-learn-go-csiq30zfg">Why should you learn Go?</a></li>
+</ul>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/05/18/disk/" data-toggle="tooltip" data-placement="top" title="Linux 磁盘占用分析">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/golang" title="golang">
+                            golang
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Zhouqian Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>
