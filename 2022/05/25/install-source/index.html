@@ -231,7 +231,7 @@
 <p>pkg 下主要有包含两个子目录：</p>
 <h4 id="1-mod">1. mod</h4>
 <p>go get 下载的<a href="https://learnku.com/docs/go-mod/1.17/module-cache/11449">模块</a>会保存在 GOMODCACHE 中，GOMODCACHE 的默认值是 GOPATH 下第一个工作区的 pkg/mod。</p>
-<h4 id="2-subdb">2. subdb</h4>
+<h4 id="2-sumdb">2. sumdb</h4>
 <p>go get 下载的校验和数据库状态会缓存在  GOPATH 下第一个工作区的 pkg/sumdb。</p>
 <h3 id="src">src</h3>
 <p>由于 GOMODULE 功能的出现，新版本的 GO 默认会将项目源码交由 GOMODULE 管理，一般不会再放置到 src 中。</p>
@@ -241,7 +241,7 @@
 <h2 id="gobin">GOBIN</h2>
 <p>存放 go install 后安装的可执行文件，一般设置为 GOPATH 设置的第一个工作区的 bin 子目录。</p>
 <p>如果为空，则 go install 后生成的可执行文件会保存在GOPATH 设置的第一个工作区的 bin 子目录中。</p>
-<p><strong>如果通过 go install 安装第三方依赖后未在 GOPATH 的第一个工作的 bin 子目录中找到可执行文件，则需要显示设置 GOBIN。</strong></p>
+<p><strong>如果通过 go install 安装第三方依赖后未在 GOPATH 的第一个工作的 bin 子目录中找到可执行文件，则需要显式设置 GOBIN。</strong></p>
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://go.dev/doc/install/source">Installing Go from source</a></li>
