@@ -222,12 +222,17 @@
 <p>GO 语言的安装路径。</p>
 <h2 id="gopath">GOPATH</h2>
 <p>Go 的工作目录，值为一个或多个目录路径，每个目录都代表 Go 语言的一个工作区。</p>
+<p>GOPATH 变量在 Unix 系统上默认为 $HOME/go，Windows 系统上默认为 %USERPROFILE%\go。</p>
 <p>当前版本中，通过 go get 命令拉取的第三方依赖会默认安装在 GOPATH 下第一个工作目录中的 pkg/mod 下。</p>
-<p>GOPATH 下一般会包含 bin、pkg、src 三个子目录。</p>
+<p>GOPATH 下一般会包含 bin、pkg、src 三个子目录：</p>
 <h3 id="bin">bin</h3>
 <p>GOBIN 为空时， go install 生成的可执行文件会默认存放在 GOPATH 下第一个工作区的 bin 子目录。</p>
 <h3 id="pkg">pkg</h3>
-<p>存放 go 项目依赖的第三方库， go get 会默认将依赖拉取到 GOPATH 下第一个工作区的 pkg 子目录。</p>
+<p>pkg 下主要有包含两个子目录：</p>
+<h4 id="1-mod">1. mod</h4>
+<p>go get 下载的<a href="https://learnku.com/docs/go-mod/1.17/module-cache/11449">模块</a>会保存在 GOMODCACHE 中，GOMODCACHE 的默认值是 GOPATH 下第一个工作区的 pkg/mod。</p>
+<h4 id="2-subdb">2. subdb</h4>
+<p>go get 下载的校验和数据库状态会缓存在  GOPATH 下第一个工作区的 pkg/sumdb。</p>
 <h3 id="src">src</h3>
 <p>由于 GOMODULE 功能的出现，新版本的 GO 默认会将项目源码交由 GOMODULE 管理，一般不会再放置到 src 中。</p>
 <p>而在GOMODULE 出现之前，go 项目源码必须要放置到 GOPATH/src 下，而 GOMODULE 模式中，项目源码可以放置在任意位置，不再受 GOPATH 限制。</p>
@@ -240,6 +245,8 @@
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://go.dev/doc/install/source">Installing Go from source</a></li>
+<li><a href="https://github.com/golang/go/wiki/GOPATH">GOPATH</a></li>
+<li><a href="https://learnku.com/docs/go-mod/1.17/module-cache/11449">GOMODULE</a></li>
 </ul>
 
 
