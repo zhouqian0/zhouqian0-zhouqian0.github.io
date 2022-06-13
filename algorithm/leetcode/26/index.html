@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="删除有序数组中的重复项" />
+    <meta property="og:title" content="删除有序数组中的重复项" />
+    <meta property="twitter:title" content="删除有序数组中的重复项" />
     
 
     
-    <meta name="description" content="">
-    <meta property="og:description" content="" />
-    <meta property="twitter:description" content="" />
+    <meta name="description" content="力扣 26. 删除有序数组中的重复项">
+    <meta property="og:description" content="力扣 26. 删除有序数组中的重复项" />
+    <meta property="twitter:description" content="力扣 26. 删除有序数组中的重复项" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Zhouqian 的博客</title>
+    <title>删除有序数组中的重复项 | Zhouqian 的博客</title>
 
-    <link rel="canonical" href="/search/placeholder/">
+    <link rel="canonical" href="/algorithm/leetcode/26/">
 
     
     
@@ -164,7 +164,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/home-bg-rest.jpg')
+        background-image: url('/img/algorithm/leetcode/bg-header.jpg')
     }
 </style>
 
@@ -176,17 +176,25 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                        <a class="tag" href="/tags/leetcode" title="leetcode">
+                            leetcode
+                        </a>
+                        
+                        <a class="tag" href="/tags/array" title="array">
+                            array
+                        </a>
+                        
                     </div>
-                    <h1></h1>
+                    <h1>删除有序数组中的重复项</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
                             Posted by 
                             
-                                    Zhouqian Blog
+                                zhouqian
                              
                             on 
-                            Monday, January 1, 0001
+                            Monday, June 13, 2022
                             
                             
                             
@@ -212,12 +220,35 @@
                 post-container">
 
                 
-                
+                <h3 id="删除有序数组中的重复项httpsleetcodecnproblemsremove-duplicates-from-sorted-array"><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">删除有序数组中的重复项</a></h3>
+<p>给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。</p>
+<p>由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。</p>
+<p>将最终结果插入 nums 的前 k 个位置后返回 k 。</p>
+<p>不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
+<hr>
+<p>方案一：通过过滤器剔除所有重复元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">removeDuplicates</span>(nums []<span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    n <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; <span style="color:#8be9fd;font-style:italic">len</span>(nums); i<span style="color:#ff79c6">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// filter 过滤元素
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> i <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">||</span> nums[i] <span style="color:#ff79c6">!=</span> nums[i <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>] {
+</span></span><span style="display:flex;"><span>            nums[n] = nums[i]
+</span></span><span style="display:flex;"><span>            n<span style="color:#ff79c6">++</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> n
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
                 
 
                 <hr>
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/algorithm/leetcode/88/" data-toggle="tooltip" data-placement="top" title="合并两个有序数组">&larr;
+                            Previous Post</a>
+                    </li>
                     
                     
                 </ul>

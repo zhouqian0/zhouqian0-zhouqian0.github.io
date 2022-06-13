@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>array on Zhouqian Blog</title>
+    <link>https://zhouqian0.github.io/tags/array/</link>
+    <description>Recent content in array on Zhouqian Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>删除有序数组中的重复项</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/26/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/26/</guid>
+      <description>删除有序数组中的重复项 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该</description>
+    </item>
+    
+    <item>
+      <title>合并两个有序数组</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/88/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/88/</guid>
+      <description>合并两个有序数组 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。 请你 合并 nums2 到 nums1 中，使合并后</description>
+    </item>
+    
+    <item>
+      <title>移动零</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/283/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/283/</guid>
+      <description>移动零 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数组进行</description>
+    </item>
+    
+  </channel>
+</rss>
