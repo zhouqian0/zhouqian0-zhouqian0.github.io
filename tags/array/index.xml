@@ -6,7 +6,16 @@
     <description>Recent content in array on Zhouqian Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>邻值查找</title>
+      <link>https://zhouqian0.github.io/algorithm/acwing/136/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/acwing/136/</guid>
+      <description>邻值查找 给定一个长度为 n 的序列 A ，A 中的数各不相同。 对于 A 中的每一个数 Ai ，求： min1≤j&amp;lt;i|Ai−Aj| 以及令上式取到最小值的 j （</description>
+    </item>
+    
     <item>
       <title>删除有序数组中的重复项</title>
       <link>https://zhouqian0.github.io/algorithm/leetcode/26/</link>

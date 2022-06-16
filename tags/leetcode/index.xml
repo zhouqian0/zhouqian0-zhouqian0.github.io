@@ -6,7 +6,43 @@
     <description>Recent content in leetcode on Zhouqian Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>环形链表</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/141/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/141/</guid>
+      <description>环形链表 给你一个链表的头节点 head ，判断链表中是否有环。 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中</description>
+    </item>
+    
+    <item>
+      <title>环形链表 II</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/142/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/142/</guid>
+      <description>环形链表 II 给定一个链表的头节点 head，返回链表开始入环的第一个节点。如果链表无环，则返回 null。 如果链表中有某个节点，可以通过连续跟踪 next</description>
+    </item>
+    
+    <item>
+      <title>K 个一组翻转链表</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/25/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/25/</guid>
+      <description>K 个一组翻转链表 给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。 k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不</description>
+    </item>
+    
+    <item>
+      <title>反转链表</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/206/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/206/</guid>
+      <description>反转链表 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。 方案一：通过过滤器将所有非零元素顺序前置 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode *</description>
+    </item>
+    
     <item>
       <title>删除有序数组中的重复项</title>
       <link>https://zhouqian0.github.io/algorithm/leetcode/26/</link>
