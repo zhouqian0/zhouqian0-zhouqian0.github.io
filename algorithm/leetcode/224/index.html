@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Zhouqian Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg">
+    <meta property="twitter:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg" />
+    
+
+    
+    <meta name="title" content="基本计算器" />
+    <meta property="og:title" content="基本计算器" />
+    <meta property="twitter:title" content="基本计算器" />
+    
+
+    
+    <meta name="description" content="力扣 224. 基本计算器">
+    <meta property="og:description" content="力扣 224. 基本计算器" />
+    <meta property="twitter:description" content="力扣 224. 基本计算器" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>基本计算器 | Zhouqian 的博客</title>
+
+    <link rel="canonical" href="/algorithm/leetcode/224/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Zhouqian Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/algorithm">algorithm</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/archive">archive</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/daily">daily</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/golang">golang</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/algorithm/leetcode/bg-header.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/leetcode" title="leetcode">
+                            leetcode
+                        </a>
+                        
+                        <a class="tag" href="/tags/stack" title="stack">
+                            stack
+                        </a>
+                        
+                    </div>
+                    <h1>基本计算器</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                zhouqian
+                             
+                            on 
+                            Friday, June 24, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="基本计算器httpsleetcodecnproblemsbasic-calculator"><a href="https://leetcode.cn/problems/basic-calculator/">基本计算器</a></h3>
+<p>给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。</p>
+<p>注意:不允许使用任何将字符串作为数学表达式计算的内置函数，比如 eval() 。</p>
+<hr>
+<p>方案一：将中缀表达式转为后缀表达式计算（此方案适用于基本计算器 1-3 三题）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">calculate</span>(s <span style="color:#8be9fd">string</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 结尾补一个空格，保证所有数字都被计算到
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 空格可以触发后面代码中 for 循环中将数字入栈的操作
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    s <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34; &#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 将中缀表达式转为后缀表达式，并保存到 tokens
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    tokens <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">string</span>, <span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(s))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 标识符，用作判断是否需要补 0，用作类似 -1 + 5 =&gt; 0 - 1 + 5 的场景
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    needsZero <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 保存遍历字符串遇到的符号
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 因为存在括号，所以需要将部分符号临时保存到 opStack
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    opStack <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">string</span>, <span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(s))
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 保存最近的数字，用字符串格式是为了便于整合完整数字并加入 tokens 数组
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    num <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 遍历字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">for</span> _, x <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">range</span> s {
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 如果是数字则暂作保留并立即进行下一轮便利（因为需要截取完整的数字）
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#39;0&#39;</span> <span style="color:#ff79c6">&lt;=</span> x <span style="color:#ff79c6">&amp;&amp;</span> x <span style="color:#ff79c6">&lt;=</span> <span style="color:#f1fa8c">&#39;9&#39;</span> {
+</span></span><span style="display:flex;"><span>            num <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">string</span>(x)
+</span></span><span style="display:flex;"><span>            needsZero = <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>        } 
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 如果缓存了数字
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(num) &gt; <span style="color:#bd93f9">0</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 将数字保存到 tokens 中，并将 num 变量初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            tokens = <span style="color:#8be9fd;font-style:italic">append</span>(tokens, num)
+</span></span><span style="display:flex;"><span>            num = <span style="color:#f1fa8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 如果遇到空格则略过，不能放在对缓存数字 num 的判断之前
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 因为代码开头在字符串 s 的末尾加了空格，遍历到此空格时，会正好触发上面的将缓存数字 num 入栈的操作
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> x <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 左括号直接入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> x <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;(&#39;</span> {
+</span></span><span style="display:flex;"><span>            opStack = <span style="color:#8be9fd;font-style:italic">append</span>(opStack, <span style="color:#8be9fd;font-style:italic">string</span>(x))
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 左括号后如果出现符号，则需要补零，如 1 + (-2 + 3)
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            needsZero = <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 右括号则将运算符号栈出栈，直至遇到左括号
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> x <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;)&#39;</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> <span style="color:#8be9fd;font-style:italic">len</span>(opStack) &gt; <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> opStack[<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#34;(&#34;</span> {
+</span></span><span style="display:flex;"><span>                tokens = <span style="color:#8be9fd;font-style:italic">append</span>(tokens, <span style="color:#8be9fd;font-style:italic">string</span>(opStack[<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]))
+</span></span><span style="display:flex;"><span>                opStack = opStack[:<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 将左括号出栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            opStack = opStack[:<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">//右括号后面出现符号只可能是运算符
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            needsZero = <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 如果需要补零
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 该操作需要在判断运算符的操作之前
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> needsZero {
+</span></span><span style="display:flex;"><span>            tokens = <span style="color:#8be9fd;font-style:italic">append</span>(tokens, <span style="color:#f1fa8c">&#34;0&#34;</span>)
+</span></span><span style="display:flex;"><span>            needsZero = <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 判断当前运算符号优先级
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        curRank <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">getRank</span>(<span style="color:#8be9fd;font-style:italic">string</span>(x))
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 遍历符号栈，如果栈顶元素优先级大于当前元素，则将其加入 tokens
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 比如, 2+3*5+4，遍历到 + 时，则需要将此前的 * 提取出来加入 tokens
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 因为遇到 + 时，高优先级的内容已经计算完了
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// tokens:  [2, 3, 5]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// opStack: [+, *]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// ==&gt; tokens: [2, 3, 5, *, +], opStack: []
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">for</span> <span style="color:#8be9fd;font-style:italic">len</span>(opStack) &gt; <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#50fa7b">getRank</span>(opStack[<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]) <span style="color:#ff79c6">&gt;=</span> curRank {
+</span></span><span style="display:flex;"><span>            tokens = <span style="color:#8be9fd;font-style:italic">append</span>(tokens, <span style="color:#8be9fd;font-style:italic">string</span>(opStack[<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]))
+</span></span><span style="display:flex;"><span>            opStack = opStack[:<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 将当前运算符入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        opStack = <span style="color:#8be9fd;font-style:italic">append</span>(opStack, <span style="color:#8be9fd;font-style:italic">string</span>(x))
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 将符号栈内的剩余符号入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">for</span> <span style="color:#8be9fd;font-style:italic">len</span>(opStack)  &gt; <span style="color:#bd93f9">0</span> {
+</span></span><span style="display:flex;"><span>        tokens = <span style="color:#8be9fd;font-style:italic">append</span>(tokens, <span style="color:#8be9fd;font-style:italic">string</span>(opStack[<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]))
+</span></span><span style="display:flex;"><span>        opStack = opStack[:<span style="color:#8be9fd;font-style:italic">len</span>(opStack) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>    }   
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#50fa7b">evalRPN</span>(tokens)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">// getRank 判断运算符等级，乘除高于加减。
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">getRank</span>(op <span style="color:#8be9fd">string</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">switch</span> op {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;+&#34;</span>, <span style="color:#f1fa8c">&#34;-&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;*&#34;</span>, <span style="color:#f1fa8c">&#34;/&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">2</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>} 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">evalRPN</span>(tokens []<span style="color:#8be9fd">string</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 定义栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    stk <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, <span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(tokens))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 遍历数组
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">for</span> _, token <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">range</span> tokens {
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 判断是否是数字
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        num, err <span style="color:#ff79c6">:=</span> strconv.<span style="color:#50fa7b">Atoi</span>(token)
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 将数字入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> err <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nil</span> {
+</span></span><span style="display:flex;"><span>            stk = <span style="color:#8be9fd;font-style:italic">append</span>(stk, num)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">continue</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 将最近两个数字取出并出栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        num1, num2 <span style="color:#ff79c6">:=</span> stk[<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">2</span>], stk[<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>        stk = stk[:<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">2</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 将最近两个数字通过运算符计算并将其入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        stk = <span style="color:#8be9fd;font-style:italic">append</span>(stk, <span style="color:#50fa7b">calc</span>(num1, num2, token))
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 因为题目保证给定表达式必定有结果，所以直接返回栈中第一个元素
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">return</span> stk[<span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">calc</span>(a, b <span style="color:#8be9fd">int</span>, op <span style="color:#8be9fd">string</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">switch</span> op {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;+&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> a <span style="color:#ff79c6">+</span> b
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;-&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> a <span style="color:#ff79c6">-</span> b
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;*&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> a <span style="color:#ff79c6">*</span> b
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;/&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> a <span style="color:#ff79c6">/</span> b
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/algorithm/leetcode/150/" data-toggle="tooltip" data-placement="top" title="逆波兰表达式求值">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/array" title="array">
+                            array
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/golang" title="golang">
+                            golang
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/leetcode" title="leetcode">
+                            leetcode
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linked-list" title="linked-list">
+                            linked-list
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/stack" title="stack">
+                            stack
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Zhouqian Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>
