@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Zhouqian Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg">
+    <meta property="twitter:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg" />
+    
+
+    
+    <meta name="title" content="接雨水" />
+    <meta property="og:title" content="接雨水" />
+    <meta property="twitter:title" content="接雨水" />
+    
+
+    
+    <meta name="description" content="力扣 42. 接雨水">
+    <meta property="og:description" content="力扣 42. 接雨水" />
+    <meta property="twitter:description" content="力扣 42. 接雨水" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>接雨水 | Zhouqian 的博客</title>
+
+    <link rel="canonical" href="/algorithm/leetcode/42/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Zhouqian Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/algorithm">algorithm</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/archive">archive</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/daily">daily</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/golang">golang</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/algorithm/leetcode/bg-header.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/leetcode" title="leetcode">
+                            leetcode
+                        </a>
+                        
+                        <a class="tag" href="/tags/stack" title="stack">
+                            stack
+                        </a>
+                        
+                        <a class="tag" href="/tags/presum" title="preSum">
+                            preSum
+                        </a>
+                        
+                    </div>
+                    <h1>接雨水</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                zhouqian
+                             
+                            on 
+                            Sunday, June 26, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="接雨水httpsleetcodecnproblemstrapping-rain-water"><a href="https://leetcode.cn/problems/trapping-rain-water/">接雨水</a></h3>
+<p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
+<hr>
+<p>方案一：垂直方向每一竖计算能接住的雨水量（前缀和算法）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">trap</span>(height []<span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    n <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">len</span>(height)
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 前缀最大值数组和后缀最大值数组
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    preMax, sufMax <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, n), <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, n)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 计算前缀最大值
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    preMax[<span style="color:#bd93f9">0</span>] = height[<span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">1</span>;i &lt; n; i<span style="color:#ff79c6">++</span> {
+</span></span><span style="display:flex;"><span>        preMax[i] = <span style="color:#50fa7b">max</span>(preMax[i <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>], height[i])
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 计算后缀最大值
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    sufMax[n <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>] = height[n <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> n <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">2</span>; i <span style="color:#ff79c6">&gt;=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span> {
+</span></span><span style="display:flex;"><span>        sufMax[i] = <span style="color:#50fa7b">max</span>(sufMax[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>], height[i])
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ans <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 遍历数组，掠过第一个和最后一个，因为其必定无法接到雨水
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&lt;=</span> n <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">2</span>; i<span style="color:#ff79c6">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 前前缀最大值和后缀最大值中较小的部分，取较高的部分会导致雨水从较低的部分漏走
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        ans <span style="color:#ff79c6">+=</span> <span style="color:#50fa7b">min</span>(preMax[i], sufMax[i]) <span style="color:#ff79c6">-</span> height[i]
+</span></span><span style="display:flex;"><span>    }    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> ans
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">max</span>(a, b <span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> a &gt; b {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> a 
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">min</span>(a, b <span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> a &lt; b {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> a
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>方案二：纵向计算，利用单调递减栈，每一次出栈都意味着会接到雨水（但可能会出现没接住的情况）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6272a4">// rect 矩形。
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">type</span> rect <span style="color:#8be9fd;font-style:italic">struct</span> {
+</span></span><span style="display:flex;"><span>    height <span style="color:#8be9fd">int</span>
+</span></span><span style="display:flex;"><span>    width  <span style="color:#8be9fd">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">trap</span>(height []<span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    ans <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 单调递减栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 在构建单调递减栈的过程中，每一次的出栈都表示可以接到雨水
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    stk <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#ff79c6">*</span>rect, <span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(height))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> _, h <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">range</span> height {
+</span></span><span style="display:flex;"><span>        accumulatedWidth <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 栈顶元素的高度小于当前元素，满足出栈条件
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">for</span> <span style="color:#8be9fd;font-style:italic">len</span>(stk) &gt; <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> stk[<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>].height &lt; h {
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 取栈顶
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            top <span style="color:#ff79c6">:=</span> stk[<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>            accumulatedWidth <span style="color:#ff79c6">+=</span> top.width
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 将栈顶元素出栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            stk = stk[:<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 如果栈中还有元素
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#6272a4">// 如果栈中没有元素就无法构成 凹 行，从而无法接住雨水
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(stk) &gt; <span style="color:#bd93f9">0</span> {
+</span></span><span style="display:flex;"><span>                up, bottom <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">min</span>(h, stk[<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>].height), top.height
+</span></span><span style="display:flex;"><span>                <span style="color:#6272a4">// 累加结果
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>                ans <span style="color:#ff79c6">+=</span> (up <span style="color:#ff79c6">-</span> bottom) <span style="color:#ff79c6">*</span> accumulatedWidth
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// +1 为累加自身宽度
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        accumulatedWidth <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// accumulatedWidth 中包含了从出栈操作中累积的宽度
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        stk = <span style="color:#8be9fd;font-style:italic">append</span>(stk, <span style="color:#ff79c6">&amp;</span>rect{
+</span></span><span style="display:flex;"><span>            height: h,
+</span></span><span style="display:flex;"><span>            width:  accumulatedWidth,
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> ans
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">min</span>(a, b <span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> a &lt; b {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> a
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/algorithm/leetcode/84/" data-toggle="tooltip" data-placement="top" title="柱状图中最大的矩形">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/array" title="array">
+                            array
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/golang" title="golang">
+                            golang
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/leetcode" title="leetcode">
+                            leetcode
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linked-list" title="linked-list">
+                            linked-list
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/stack" title="stack">
+                            stack
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Zhouqian Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>
