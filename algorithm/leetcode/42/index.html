@@ -224,7 +224,7 @@
                 post-container">
 
                 
-                <h3 id="接雨水httpsleetcodecnproblemstrapping-rain-water"><a href="https://leetcode.cn/problems/trapping-rain-water/">接雨水</a></h3>
+                <h3 id="力扣-42-接雨水httpsleetcodecnproblemstrapping-rain-water"><a href="https://leetcode.cn/problems/trapping-rain-water/">力扣 42. 接雨水</a></h3>
 <p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
 <hr>
 <p>方案一：垂直方向每一竖计算能接住的雨水量（前缀和算法）。</p>
@@ -267,7 +267,11 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>方案二：纵向计算，利用单调递减栈，每一次出栈都意味着会接到雨水（但可能会出现没接住的情况）。</p>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为进行了数次同步的遍历操作，每次遍历的元素不超过 n，所以时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(n)，因为借助了两个长度不超过 n 的数组辅助计算，所以空间复杂度为 O(n)。</li>
+</ul>
+<p>方案二：纵向计算，利用单调递减栈，每一次出栈都意味着会接到雨水（但可能会出现没接住的情况）。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6272a4">// rect 矩形。
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">type</span> rect <span style="color:#8be9fd;font-style:italic">struct</span> {
 </span></span><span style="display:flex;"><span>    height <span style="color:#8be9fd">int</span>
@@ -316,7 +320,11 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为需要遍历所有数组元素才能完成计算，每次遍历中还附带嵌套的出栈遍历操作，但均摊（每个元素最多出入栈一次）后时间复杂度仍为 O(n)。</li>
+<li>空间复杂度：O(n)，因为使用了一个长度不超过 n 的单调栈辅助计算，所以空间复杂度为 O(n)。</li>
+</ul>
+
 
                 
 
@@ -328,6 +336,11 @@
                             Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/algorithm/leetcode/641/" data-toggle="tooltip" data-placement="top" title="设计循环双端队列">Next
+                            Post &rarr;</a>
+                    </li>
                     
                 </ul>
                 
@@ -375,6 +388,10 @@
                         
                         
                         
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
                         
                         
                         

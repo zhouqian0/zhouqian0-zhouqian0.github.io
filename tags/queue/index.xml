@@ -13,7 +13,7 @@
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/239/</guid>
-      <description>滑动窗口最大值 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。 你只可以看到在滑动窗口内的 k 个数字。滑动窗</description>
+      <description>力扣 239. 滑动窗口最大值 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。 你只可以看到在滑动窗口内的 k 个数字。</description>
     </item>
     
   </channel>

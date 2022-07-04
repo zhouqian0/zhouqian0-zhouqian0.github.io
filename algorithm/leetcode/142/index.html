@@ -220,7 +220,7 @@
                 post-container">
 
                 
-                <h3 id="环形链表-iihttpsleetcodecnproblemslinked-list-cycle-ii"><a href="https://leetcode.cn/problems/linked-list-cycle-ii/">环形链表 II</a></h3>
+                <h3 id="力扣-142-环形链表-iihttpsleetcodecnproblemslinked-list-cycle-ii"><a href="https://leetcode.cn/problems/linked-list-cycle-ii/">力扣 142. 环形链表 II</a></h3>
 <p>给定一个链表的头节点 head，返回链表开始入环的第一个节点。如果链表无环，则返回 null。</p>
 <p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p>
 <p>不允许修改 链表。</p>
@@ -254,7 +254,11 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">nil</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为需要遍历链表中所有元素才能判断是否有环，并且判断有环后，为了找到入环点行进的距离不超过 n，所以时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(1)，因为使用了常数量个变量用作辅助计算，所以空间复杂度为 O(1)。</li>
+</ul>
+
 
                 
 
@@ -318,6 +322,10 @@
                         
                         
                         
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
                         
                         
                         

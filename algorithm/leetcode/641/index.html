@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Zhouqian Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg">
+    <meta property="twitter:image" content="https://zhouqian0.github.io//img/home-bg-rest.jpg" />
+    
+
+    
+    <meta name="title" content="设计循环双端队列" />
+    <meta property="og:title" content="设计循环双端队列" />
+    <meta property="twitter:title" content="设计循环双端队列" />
+    
+
+    
+    <meta name="description" content="力扣 641. 设计循环双端队列">
+    <meta property="og:description" content="力扣 641. 设计循环双端队列" />
+    <meta property="twitter:description" content="力扣 641. 设计循环双端队列" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>设计循环双端队列 | Zhouqian 的博客</title>
+
+    <link rel="canonical" href="/algorithm/leetcode/641/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Zhouqian Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/algorithm">algorithm</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/archive">archive</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/daily">daily</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/golang">golang</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/algorithm/leetcode/bg-header.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/leetcode" title="leetcode">
+                            leetcode
+                        </a>
+                        
+                        <a class="tag" href="/tags/deque" title="deque">
+                            deque
+                        </a>
+                        
+                        <a class="tag" href="/tags/array" title="array">
+                            array
+                        </a>
+                        
+                    </div>
+                    <h1>设计循环双端队列</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                zhouqian
+                             
+                            on 
+                            Friday, July 1, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="力扣-641-设计循环双端队列httpsleetcodecnproblemsdesign-circular-deque"><a href="https://leetcode.cn/problems/design-circular-deque/">力扣 641. 设计循环双端队列</a></h3>
+<p>设计实现双端队列。</p>
+<p>实现 MyCircularDeque 类:</p>
+<p>MyCircularDeque(int k)：构造函数,双端队列最大为 k。
+boolean insertFront()：将一个元素添加到双端队列头部。 如果操作成功返回 true，否则返回 false。
+boolean insertLast()：将一个元素添加到双端队列尾部。如果操作成功返回 true，否则返回 false。
+boolean deleteFront()：从双端队列头部删除一个元素。 如果操作成功返回 true，否则返回 false。
+boolean deleteLast()：从双端队列尾部删除一个元素。如果操作成功返回 true，否则返回 false。
+int getFront()：从双端队列头部获得一个元素。如果双端队列为空，返回 -1。
+int getRear()：获得双端队列的最后一个元素。如果双端队列为空，返回 -1。
+boolean isEmpty()：若双端队列为空，则返回 true，否则返回 false。
+boolean isFull()：若双端队列满了，则返回 true，否则返回 false。</p>
+<hr>
+<p>方案一：基于数组实现，定义头尾指针用作实现循环。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">type</span> MyCircularDeque <span style="color:#8be9fd;font-style:italic">struct</span> {
+</span></span><span style="display:flex;"><span>    arr   []<span style="color:#8be9fd">int</span> <span style="color:#6272a4">// 数组
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    front <span style="color:#8be9fd">int</span>   <span style="color:#6272a4">// 头指针
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    rear  <span style="color:#8be9fd">int</span>   <span style="color:#6272a4">// 尾指针
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    cnt   <span style="color:#8be9fd">int</span>   <span style="color:#6272a4">// 当前元素数量
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">Constructor</span>(k <span style="color:#8be9fd">int</span>) MyCircularDeque {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> MyCircularDeque{
+</span></span><span style="display:flex;"><span>        arr:   <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, k),
+</span></span><span style="display:flex;"><span>        front: <span style="color:#bd93f9">1</span>, <span style="color:#6272a4">// 让头指针和尾指针错开
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        rear:  <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>        cnt:   <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">InsertFront</span>(value <span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> this.<span style="color:#50fa7b">IsFull</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 边界判断
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span> this.front<span style="color:#ff79c6">--</span>; this.front <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> {
+</span></span><span style="display:flex;"><span>        this.front = <span style="color:#8be9fd;font-style:italic">cap</span>(this.arr) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    this.arr[this.front] = value
+</span></span><span style="display:flex;"><span>    this.cnt<span style="color:#ff79c6">++</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">InsertLast</span>(value <span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> this.<span style="color:#50fa7b">IsFull</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 边界判断
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span> this.rear<span style="color:#ff79c6">++</span>; this.rear <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">cap</span>(this.arr) {
+</span></span><span style="display:flex;"><span>        this.rear = <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    this.arr[this.rear] = value
+</span></span><span style="display:flex;"><span>    this.cnt<span style="color:#ff79c6">++</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">DeleteFront</span>() <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> this.<span style="color:#50fa7b">IsEmpty</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 边界判断
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span> this.front<span style="color:#ff79c6">++</span>; this.front <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">cap</span>(this.arr) {
+</span></span><span style="display:flex;"><span>        this.front = <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    this.cnt<span style="color:#ff79c6">--</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">DeleteLast</span>() <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> this.<span style="color:#50fa7b">IsEmpty</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 边界判断
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span> this.rear<span style="color:#ff79c6">--</span>; this.rear <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> {
+</span></span><span style="display:flex;"><span>        this.rear = <span style="color:#8be9fd;font-style:italic">cap</span>(this.arr) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    this.cnt<span style="color:#ff79c6">--</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">GetFront</span>() <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> this.<span style="color:#50fa7b">IsEmpty</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> this.arr[this.front]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">GetRear</span>() <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> this.<span style="color:#50fa7b">IsEmpty</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> this.arr[this.rear]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">IsEmpty</span>() <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> this.cnt <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> (this <span style="color:#ff79c6">*</span>MyCircularDeque) <span style="color:#50fa7b">IsFull</span>() <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> this.cnt <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">cap</span>(this.arr)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * Your MyCircularDeque object will be instantiated and called as such:
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * obj := Constructor(k);
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_1 := obj.InsertFront(value);
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_2 := obj.InsertLast(value);
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_3 := obj.DeleteFront();
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_4 := obj.DeleteLast();
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_5 := obj.GetFront();
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_6 := obj.GetRear();
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_7 := obj.IsEmpty();
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> * param_8 := obj.IsFull();
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"> */</span>
+</span></span></code></pre></div>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/algorithm/leetcode/42/" data-toggle="tooltip" data-placement="top" title="接雨水">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/algorithm/leetcode/21/" data-toggle="tooltip" data-placement="top" title="合并两个有序链表">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/array" title="array">
+                            array
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/golang" title="golang">
+                            golang
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/leetcode" title="leetcode">
+                            leetcode
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linked-list" title="linked-list">
+                            linked-list
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/stack" title="stack">
+                            stack
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Zhouqian Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

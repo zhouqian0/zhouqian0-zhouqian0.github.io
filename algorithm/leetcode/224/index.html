@@ -220,7 +220,7 @@
                 post-container">
 
                 
-                <h3 id="基本计算器httpsleetcodecnproblemsbasic-calculator"><a href="https://leetcode.cn/problems/basic-calculator/">基本计算器</a></h3>
+                <h3 id="力扣-224-基本计算器httpsleetcodecnproblemsbasic-calculator"><a href="https://leetcode.cn/problems/basic-calculator/">力扣 224. 基本计算器</a></h3>
 <p>给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。</p>
 <p>注意:不允许使用任何将字符串作为数学表达式计算的内置函数，比如 eval() 。</p>
 <hr>
@@ -361,7 +361,11 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为需要遍历数组中所有元素，虽然遍历途中有对括号之类的出栈操作遍历（每个元素的入栈出栈至多一次），但是均摊后时间复杂度还是在 O(n)。</li>
+<li>空间复杂度：O(n)，因为使用了数个长度不超过 n 的栈辅助计算，所以空间复杂度为 O(n)。</li>
+</ul>
+
 
                 
 
@@ -425,6 +429,10 @@
                         
                         
                         
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
                         
                         
                         

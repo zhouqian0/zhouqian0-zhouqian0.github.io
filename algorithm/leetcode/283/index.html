@@ -220,11 +220,11 @@
                 post-container">
 
                 
-                <h3 id="移动零httpsleetcodecnproblemsmove-zeroes"><a href="https://leetcode.cn/problems/move-zeroes/">移动零</a></h3>
+                <h3 id="力扣-283-移动零httpsleetcodecnproblemsmove-zeroes"><a href="https://leetcode.cn/problems/move-zeroes/">力扣 283. 移动零</a></h3>
 <p>给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
 <p>请注意 ，必须在不复制数组的情况下原地对数组进行操作。</p>
 <hr>
-<p>方案一：通过过滤器将所有非零元素顺序前置</p>
+<p>方案一：通过过滤器将所有非零元素顺序前置。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">moveZeroes</span>(nums []<span style="color:#8be9fd">int</span>)  {
 </span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 定义一个指针指向 nums 开头
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    n <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
@@ -243,7 +243,11 @@
 </span></span><span style="display:flex;"><span>        nums[n] = <span style="color:#bd93f9">0</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为需要遍历所有数组元素，所以时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(1)，因为没有借助额外的辅助空间，只是在原数组的基础上进行遍历移动，所以空间复杂度为 O(1)。</li>
+</ul>
+
 
                 
 
@@ -307,6 +311,10 @@
                         
                         
                         
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
                         
                         
                         

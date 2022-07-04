@@ -6,14 +6,50 @@
     <description>Recent content in leetcode on Zhouqian Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>最大矩形</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/85/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/85/</guid>
+      <description>力扣 85. 最大矩形 给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。 方案一：类比力扣 84题，将矩阵压缩成</description>
+    </item>
+    
+    <item>
+      <title>加一</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/66/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/66/</guid>
+      <description>力扣 66. 加一 给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。 你可以</description>
+    </item>
+    
+    <item>
+      <title>合并两个有序链表</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/21/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/21/</guid>
+      <description>力扣 21. 合并两个有序链表 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 方案一：遍历双链表，通过过</description>
+    </item>
+    
+    <item>
+      <title>设计循环双端队列</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/641/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/641/</guid>
+      <description>力扣 641. 设计循环双端队列 设计实现双端队列。 实现 MyCircularDeque 类: MyCircularDeque(int k)：构造函数,双端队列最大为 k。 boolean insertFront()：将一个元素添加到双端队列</description>
+    </item>
+    
     <item>
       <title>接雨水</title>
       <link>https://zhouqian0.github.io/algorithm/leetcode/42/</link>
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/42/</guid>
-      <description>接雨水 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。 方案一：垂直方向每一竖计算能接住的雨水量（前</description>
+      <description>力扣 42. 接雨水 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。 方案一：垂直方向每一竖计算能接住的雨水</description>
     </item>
     
     <item>
@@ -22,7 +58,7 @@
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/84/</guid>
-      <description>柱状图中最大的矩形 给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。 求在该柱状图中，能够勾勒出来的矩形的最大面</description>
+      <description>力扣 84. 柱状图中最大的矩形 给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。 求在该柱状图中，能够勾勒出来的矩形的</description>
     </item>
     
     <item>
@@ -31,7 +67,7 @@
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/239/</guid>
-      <description>滑动窗口最大值 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。 你只可以看到在滑动窗口内的 k 个数字。滑动窗</description>
+      <description>力扣 239. 滑动窗口最大值 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。 你只可以看到在滑动窗口内的 k 个数字。</description>
     </item>
     
     <item>
@@ -40,7 +76,7 @@
       <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/224/</guid>
-      <description>基本计算器 给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。 注意:不允许使用任何将字符串作为数学表达式计算的内置函数，比如 eval()</description>
+      <description>力扣 224. 基本计算器 给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。 注意:不允许使用任何将字符串作为数学表达式计算的内置函数，</description>
     </item>
     
     <item>
@@ -49,7 +85,7 @@
       <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/150/</guid>
-      <description>逆波兰表达式求值 根据 逆波兰表示法，求表达式的值。 有效的算符包括 +、-、*、/。每个运算对象可以是整数，也可以是另一个逆波兰表达式。 注意两个整</description>
+      <description>力扣 150. 逆波兰表达式求值 根据 逆波兰表示法，求表达式的值。 有效的算符包括 +、-、*、/。每个运算对象可以是整数，也可以是另一个逆波兰表达式。 注意</description>
     </item>
     
     <item>
@@ -58,7 +94,7 @@
       <pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/155/</guid>
-      <description>最小栈 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。 实现 MinStack 类: MinStack() 初始化堆栈对象。 void push(int val) 将元素val推入堆栈。 void pop() 删</description>
+      <description>力扣 155. 最小栈 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。 实现 MinStack 类: MinStack() 初始化堆栈对象。 void push(int val) 将元素val推入堆栈。</description>
     </item>
     
     <item>
@@ -67,7 +103,7 @@
       <pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/20/</guid>
-      <description>有效的括号 给定一个只包括 &amp;lsquo;(&amp;rsquo;，&amp;rsquo;)&amp;rsquo;，&amp;rsquo;{&amp;rsquo;，&amp;rsquo;}&amp;r</description>
+      <description>力扣 20. 有效的括号 给定一个只包括 &amp;lsquo;(&amp;rsquo;，&amp;rsquo;)&amp;rsquo;，&amp;rsquo;{&amp;rsquo;，&amp;rsquo;</description>
     </item>
     
     <item>
@@ -76,7 +112,7 @@
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/141/</guid>
-      <description>环形链表 给你一个链表的头节点 head ，判断链表中是否有环。 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中</description>
+      <description>力扣 141. 环形链表 给你一个链表的头节点 head ，判断链表中是否有环。 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定</description>
     </item>
     
     <item>
@@ -85,7 +121,7 @@
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/142/</guid>
-      <description>环形链表 II 给定一个链表的头节点 head，返回链表开始入环的第一个节点。如果链表无环，则返回 null。 如果链表中有某个节点，可以通过连续跟踪 next</description>
+      <description>力扣 142. 环形链表 II 给定一个链表的头节点 head，返回链表开始入环的第一个节点。如果链表无环，则返回 null。 如果链表中有某个节点，可以通过连续</description>
     </item>
     
     <item>
@@ -94,7 +130,7 @@
       <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/25/</guid>
-      <description>K 个一组翻转链表 给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。 k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不</description>
+      <description>力扣 25. K 个一组翻转链表 给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。 k 是一个正整数，它的值小于或等于链表的长度。如果节点</description>
     </item>
     
     <item>
@@ -103,7 +139,7 @@
       <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/206/</guid>
-      <description>反转链表 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。 方案一：通过过滤器将所有非零元素顺序前置 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode *</description>
+      <description>力扣 206. 反转链表 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。 方案一：通过过滤器将所有非零元素顺序前置。 /** * Definition for singly-linked list. * type ListNode struct { * Val int</description>
     </item>
     
     <item>
@@ -112,7 +148,7 @@
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/26/</guid>
-      <description>删除有序数组中的重复项 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该</description>
+      <description>力扣 26. 删除有序数组中的重复项 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺</description>
     </item>
     
     <item>
@@ -121,7 +157,7 @@
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/88/</guid>
-      <description>合并两个有序数组 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。 请你 合并 nums2 到 nums1 中，使合并后</description>
+      <description>力扣 88. 合并两个有序数组 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。 请你 合并 nums2 到 nums1 中，使</description>
     </item>
     
     <item>
@@ -130,7 +166,7 @@
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/283/</guid>
-      <description>移动零 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数组进行</description>
+      <description>力扣 283. 移动零 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数</description>
     </item>
     
   </channel>

@@ -6,14 +6,32 @@
     <description>Recent content in array on Zhouqian Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>加一</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/66/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/66/</guid>
+      <description>力扣 66. 加一 给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。 你可以</description>
+    </item>
+    
+    <item>
+      <title>设计循环双端队列</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/641/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/641/</guid>
+      <description>力扣 641. 设计循环双端队列 设计实现双端队列。 实现 MyCircularDeque 类: MyCircularDeque(int k)：构造函数,双端队列最大为 k。 boolean insertFront()：将一个元素添加到双端队列</description>
+    </item>
+    
     <item>
       <title>邻值查找</title>
       <link>https://zhouqian0.github.io/algorithm/acwing/136/</link>
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/acwing/136/</guid>
-      <description>邻值查找 给定一个长度为 n 的序列 A ，A 中的数各不相同。 对于 A 中的每一个数 Ai ，求： min1≤j&amp;lt;i|Ai−Aj| 以及令上式取到最小值的 j （</description>
+      <description>acwing 136. 邻值查找 给定一个长度为 n 的序列 A ，A 中的数各不相同。 对于 A 中的每一个数 Ai ，求： min1≤j&amp;lt;i|Ai−Aj| 以及令上式取到最小值的</description>
     </item>
     
     <item>
@@ -22,7 +40,7 @@
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/26/</guid>
-      <description>删除有序数组中的重复项 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该</description>
+      <description>力扣 26. 删除有序数组中的重复项 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺</description>
     </item>
     
     <item>
@@ -31,7 +49,7 @@
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/88/</guid>
-      <description>合并两个有序数组 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。 请你 合并 nums2 到 nums1 中，使合并后</description>
+      <description>力扣 88. 合并两个有序数组 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。 请你 合并 nums2 到 nums1 中，使</description>
     </item>
     
     <item>
@@ -40,7 +58,7 @@
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://zhouqian0.github.io/algorithm/leetcode/283/</guid>
-      <description>移动零 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数组进行</description>
+      <description>力扣 283. 移动零 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数</description>
     </item>
     
   </channel>

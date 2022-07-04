@@ -220,7 +220,7 @@
                 post-container">
 
                 
-                <h3 id="柱状图中最大的矩形httpsleetcodecnproblemslargest-rectangle-in-histogram"><a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/">柱状图中最大的矩形</a></h3>
+                <h3 id="力扣-84-柱状图中最大的矩形httpsleetcodecnproblemslargest-rectangle-in-histogram"><a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/">力扣 84. 柱状图中最大的矩形</a></h3>
 <p>给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
 <p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
 <hr>
@@ -269,7 +269,11 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为需要遍历数组中所有元素，虽然遍历途中有入栈出栈的遍历操作（每个元素最多出入一次），但是均摊后时间复杂度还是在 O(n)。</li>
+<li>空间复杂度：O(n)，因为使用了数个长度不超过 n 的单调栈，所以空间复杂度为 O(n)。</li>
+</ul>
+
 
                 
 
@@ -333,6 +337,10 @@
                         
                         
                         
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
                         
                         
                         

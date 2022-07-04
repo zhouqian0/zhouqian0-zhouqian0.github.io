@@ -220,13 +220,13 @@
                 post-container">
 
                 
-                <h3 id="删除有序数组中的重复项httpsleetcodecnproblemsremove-duplicates-from-sorted-array"><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">删除有序数组中的重复项</a></h3>
+                <h3 id="力扣-26-删除有序数组中的重复项httpsleetcodecnproblemsremove-duplicates-from-sorted-array"><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">力扣 26. 删除有序数组中的重复项</a></h3>
 <p>给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。</p>
 <p>由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。</p>
 <p>将最终结果插入 nums 的前 k 个位置后返回 k 。</p>
 <p>不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
 <hr>
-<p>方案一：通过过滤器剔除所有重复元素</p>
+<p>方案一：通过过滤器剔除所有重复元素。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">removeDuplicates</span>(nums []<span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
 </span></span><span style="display:flex;"><span>    n <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; <span style="color:#8be9fd;font-style:italic">len</span>(nums); i<span style="color:#ff79c6">++</span> {
@@ -238,7 +238,11 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> n
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为需要遍历所有数组元素才能剔除重复元素，所以时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(1)，因为使用了常数量个变量用作辅助计算，所以空间复杂度为 O(1)。</li>
+</ul>
+
 
                 
 
@@ -302,6 +306,10 @@
                         
                         
                         
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
                         
                         
                         

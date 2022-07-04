@@ -224,7 +224,7 @@
                 post-container">
 
                 
-                <h3 id="滑动窗口最大值httpsleetcodecnproblemssliding-window-maximum"><a href="https://leetcode.cn/problems/sliding-window-maximum/">滑动窗口最大值</a></h3>
+                <h3 id="力扣-239-滑动窗口最大值httpsleetcodecnproblemssliding-window-maximum"><a href="https://leetcode.cn/problems/sliding-window-maximum/">力扣 239. 滑动窗口最大值</a></h3>
 <p>给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。
 你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p>
 <p>返回 滑动窗口中的最大值 。</p>
@@ -253,7 +253,11 @@
 </span></span><span style="display:flex;"><span>    } 
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> ans
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><ul>
+<li>时间复杂度：O(n)，因为需要遍历数组中所有元素，虽然遍历途中有入队出队的遍历操作（每个元素最多出入一次），但是均摊后时间复杂度还是在 O(n)。</li>
+<li>空间复杂度：O(k)，因为使用了数个长度不超过 k 的双向单调队列，所以空间复杂度为 O(k)。</li>
+</ul>
+
 
                 
 
@@ -317,6 +321,10 @@
                         
                         
                         
+                        
+                        <a href="/tags/deque" title="deque">
+                            deque
+                        </a>
                         
                         
                         
