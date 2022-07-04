@@ -269,6 +269,42 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
 </span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">largestRectangleArea</span>(heights []<span style="color:#8be9fd">int</span>) (ans <span style="color:#8be9fd">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 定义单调递增栈，数组元素为 heights 下标
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    stk <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, <span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(heights))
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 在数组末尾补上一个题目给定范围的最小值，保证破坏栈内元素单调性
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    heights = <span style="color:#8be9fd;font-style:italic">append</span>(heights, <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i, height <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">range</span> heights {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> <span style="color:#8be9fd;font-style:italic">len</span>(stk) &gt; <span style="color:#bd93f9">0</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 取栈顶
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            top <span style="color:#ff79c6">:=</span> stk[<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 满足单调性，停止本次内循环
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">if</span> heights[top] <span style="color:#ff79c6">&lt;=</span> height {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 元素出栈
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            stk = stk[:<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// 如果此时栈中没有元素，表示 0～index-1 之间的宽度的最高公共长度为 heights[top]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#6272a4">// 否则就是栈中上一个元素的下标和当前元素下标的差 - 1（宽度） * heights[top]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(stk) &gt; <span style="color:#bd93f9">0</span> {
+</span></span><span style="display:flex;"><span>                ans = <span style="color:#50fa7b">max</span>(ans, (i <span style="color:#ff79c6">-</span> stk[<span style="color:#8be9fd;font-style:italic">len</span>(stk) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">*</span> heights[top])
+</span></span><span style="display:flex;"><span>            } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>                ans = <span style="color:#50fa7b">max</span>(ans, heights[top] <span style="color:#ff79c6">*</span> i)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        stk = <span style="color:#8be9fd;font-style:italic">append</span>(stk, i)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">max</span>(a, b <span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> a &gt; b {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> a
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> b
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
 <li>时间复杂度：O(n)，因为需要遍历数组中所有元素，虽然遍历途中有入栈出栈的遍历操作（每个元素最多出入一次），但是均摊后时间复杂度还是在 O(n)。</li>
 <li>空间复杂度：O(n)，因为使用了数个长度不超过 n 的单调栈，所以空间复杂度为 O(n)。</li>

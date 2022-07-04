@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>设计循环双端队列</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/641/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/641/</guid>
+      <description>力扣 641. 设计循环双端队列 设计实现双端队列。 实现 MyCircularDeque 类: MyCircularDeque(int k)：构造函数,双端队列最大为 k。 boolean insertFront()：将一个元素添加到双端队列</description>
+    </item>
+    
+    <item>
       <title>环形链表</title>
       <link>https://zhouqian0.github.io/algorithm/leetcode/141/</link>
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
