@@ -6,7 +6,16 @@
     <description>Recent content in linked list on Zhouqian Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/linked-list/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/linked-list/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LRU 缓存</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/146/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/146/</guid>
+      <description>力扣 146. LRU 缓存 请你设计并实现一个满足 LRU (最近最少使用) 缓存 约束的数据结构。 实现 LRUCache 类： LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存 int get(int key) 如果关键字 key 存在于</description>
+    </item>
+    
     <item>
       <title>合并两个有序链表</title>
       <link>https://zhouqian0.github.io/algorithm/leetcode/21/</link>

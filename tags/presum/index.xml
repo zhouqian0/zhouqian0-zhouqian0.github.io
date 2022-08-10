@@ -1,12 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>preSum on Zhouqian Blog</title>
+    <title>presum on Zhouqian Blog</title>
     <link>https://zhouqian0.github.io/tags/presum/</link>
-    <description>Recent content in preSum on Zhouqian Blog</description>
+    <description>Recent content in presum on Zhouqian Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/presum/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/presum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>元素和为目标值的子矩阵数量</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/1074/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/1074/</guid>
+      <description>力扣 1074. 元素和为目标值的子矩阵数量 给出矩阵 matrix 和目标值 target，返回元素总和等于目标值的非空子矩阵的数量。 子矩阵 x1, y1, x2, y2 是满足 x1 &amp;lt;= x &amp;lt;= x2 且 y1</description>
+    </item>
+    
+    <item>
+      <title>和为 K 的子数组</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/560/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/560/</guid>
+      <description>力扣 560. 和为 K 的子数组 给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的连续子数组的个数 。 方案一：套用优美子数组 中前缀和的方案。 func</description>
+    </item>
+    
+    <item>
+      <title>最大子数组和</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/53/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/53/</guid>
+      <description>力扣 1109. 最大子数组和 给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 子数组 是数组中的一个连续部</description>
+    </item>
+    
+    <item>
+      <title>航班预订统计</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/1109/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/1109/</guid>
+      <description>力扣 1109. 航班预订统计 这里有 n 个航班，它们分别从 1 到 n 进行编号。 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的</description>
+    </item>
+    
+    <item>
+      <title>二维区域和检索 - 矩阵不可变</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/304/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/304/</guid>
+      <description>力扣 304. 二维区域和检索 - 矩阵不可变 给定一个二维矩阵 matrix，以下类型的多个请求： 计算其子矩形范围内元素的总和，该子矩阵的 左上角 为 (row1, col1) ，右下</description>
+    </item>
+    
+    <item>
+      <title>统计「优美子数组」</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/1248/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/1248/</guid>
+      <description>力扣 1248. 统计「优美子数组」 给你一个整数数组 nums 和一个整数 k。如果某个连续子数组中恰好有 k 个奇数数字，我们就认为这个子数组是「优美子数组」。 请返回</description>
+    </item>
+    
     <item>
       <title>接雨水</title>
       <link>https://zhouqian0.github.io/algorithm/leetcode/42/</link>

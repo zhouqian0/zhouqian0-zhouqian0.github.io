@@ -6,7 +6,214 @@
     <description>Recent content in leetcode on Zhouqian Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhouqian0.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二叉树的最大深度</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/104/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/104/</guid>
+      <description>力扣 104. 二叉树的最大深度 给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的</description>
+    </item>
+    
+    <item>
+      <title>二叉树的最小深度</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/111/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/111/</guid>
+      <description>力扣 111. 二叉树的最小深度 给定一个二叉树，找出其最小深度。 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。 说明：叶子节点是指没有子节点的</description>
+    </item>
+    
+    <item>
+      <title>子集</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/78/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/78/</guid>
+      <description>力扣 78. 子集 给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。 解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。 方案</description>
+    </item>
+    
+    <item>
+      <title>组合</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/46/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/46/</guid>
+      <description>力扣 46. 组合 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。 方案一：递归，遍历每一种可能。 func permute(nums []int) (ans [][]int) { n := len(nums) //</description>
+    </item>
+    
+    <item>
+      <title>组合</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/77/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/77/</guid>
+      <description>力扣 77. 组合 给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。 你可以按 任何顺序 返回答案。 方案一：递归，遍历每一种可能。 func combine(n int, k int) (ans [][]int) {</description>
+    </item>
+    
+    <item>
+      <title>翻转二叉树</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/226/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/226/</guid>
+      <description>力扣 226. 翻转二叉树 给你一棵二叉树的根节点 root ，翻转这棵二叉树，并返回其根节点。 方案一：递归，遍历每一种可能。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left</description>
+    </item>
+    
+    <item>
+      <title>验证二叉搜索树</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/98/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/98/</guid>
+      <description>力扣 98. 验证二叉搜索树 给你一棵二叉树的根节点 root ，翻转这棵二叉树，并返回其根节点。 方案一：递归，遍历每一种可能。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int</description>
+    </item>
+    
+    <item>
+      <title>三数之和</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/15/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/15/</guid>
+      <description>力扣 15. 三数之和 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组</description>
+    </item>
+    
+    <item>
+      <title>元素和为目标值的子矩阵数量</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/1074/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/1074/</guid>
+      <description>力扣 1074. 元素和为目标值的子矩阵数量 给出矩阵 matrix 和目标值 target，返回元素总和等于目标值的非空子矩阵的数量。 子矩阵 x1, y1, x2, y2 是满足 x1 &amp;lt;= x &amp;lt;= x2 且 y1</description>
+    </item>
+    
+    <item>
+      <title>和为 K 的子数组</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/560/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/560/</guid>
+      <description>力扣 560. 和为 K 的子数组 给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的连续子数组的个数 。 方案一：套用优美子数组 中前缀和的方案。 func</description>
+    </item>
+    
+    <item>
+      <title>子域名访问计数</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/811/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/811/</guid>
+      <description>力扣 811. 子域名访问计数 网站域名 &amp;ldquo;discuss.leetcode.com&amp;rdquo; 由多个子域名组成。顶级域名为 &amp;ldquo;com&amp;rdquo; ，二级域名为 &amp;ldquo;leetcode.com&amp;rdquo; ，最低一级为 &amp;ldquo;discuss.leetcode.com&amp;rdquo; 。当访问域名 &amp;ldquo;discuss.leetcode.com&amp;rdquo; 时，同时也会隐式访问其父域名 &amp;ldquo;leetcode.com&amp;rdquo; 以及 &amp;ldquo;com&amp;rdquo; 。</description>
+    </item>
+    
+    <item>
+      <title>数组的度</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/697/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/697/</guid>
+      <description>力扣 697. 数组的度 给定一个非空且只包含非负数的整数数组 nums，数组的 度 的定义是指数组里任一元素出现频数的最大值。 你的任务是在 nums 中找到与 nums 拥有相</description>
+    </item>
+    
+    <item>
+      <title>盛最多水的容器</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/11/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/11/</guid>
+      <description>力扣 11. 盛最多水的容器 给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。 找出其中的两条线，使得它们与 x 轴共同构成的容器</description>
+    </item>
+    
+    <item>
+      <title>两数之和 II - 输入有序数组</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/167/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/167/</guid>
+      <description>力扣 167. 两数之和 II - 输入有序数组 给你一个下标从 1 开始的整数数组 numbers ，该数组已按 非递减顺序排列 ，请你从数组中找出满足相加之和等于目标数 target 的两个数。</description>
+    </item>
+    
+    <item>
+      <title>最大子数组和</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/53/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/53/</guid>
+      <description>力扣 1109. 最大子数组和 给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 子数组 是数组中的一个连续部</description>
+    </item>
+    
+    <item>
+      <title>航班预订统计</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/1109/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/1109/</guid>
+      <description>力扣 1109. 航班预订统计 这里有 n 个航班，它们分别从 1 到 n 进行编号。 有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的</description>
+    </item>
+    
+    <item>
+      <title>二维区域和检索 - 矩阵不可变</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/304/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/304/</guid>
+      <description>力扣 304. 二维区域和检索 - 矩阵不可变 给定一个二维矩阵 matrix，以下类型的多个请求： 计算其子矩形范围内元素的总和，该子矩阵的 左上角 为 (row1, col1) ，右下</description>
+    </item>
+    
+    <item>
+      <title>统计「优美子数组」</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/1248/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/1248/</guid>
+      <description>力扣 1248. 统计「优美子数组」 给你一个整数数组 nums 和一个整数 k。如果某个连续子数组中恰好有 k 个奇数数字，我们就认为这个子数组是「优美子数组」。 请返回</description>
+    </item>
+    
+    <item>
+      <title>LRU 缓存</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/146/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/146/</guid>
+      <description>力扣 146. LRU 缓存 请你设计并实现一个满足 LRU (最近最少使用) 缓存 约束的数据结构。 实现 LRUCache 类： LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存 int get(int key) 如果关键字 key 存在于</description>
+    </item>
+    
+    <item>
+      <title>两数之和</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/1/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/1/</guid>
+      <description>力扣 1. 两数之和 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那两个整数，并返回它们的数组下标。 你可以假设每</description>
+    </item>
+    
+    <item>
+      <title>串联所有单词的子串</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/30/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/30/</guid>
+      <description>力扣 30. 串联所有单词的子串 给定一个字符串 s 和一些 长度相同 的单词 words 。找出 s 中恰好可以由 words 中所有单词串联形成的子串的起始位置。 注意子串要与 words 中的单</description>
+    </item>
+    
+    <item>
+      <title>字母异位词分组</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/49/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/49/</guid>
+      <description>力扣 49. 字母异位词分组 给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。 字母异位词 是由重新排列源单词的字母得到的一个</description>
+    </item>
+    
+    <item>
+      <title>模拟行走机器人</title>
+      <link>https://zhouqian0.github.io/algorithm/leetcode/874/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhouqian0.github.io/algorithm/leetcode/874/</guid>
+      <description>力扣 874. 模拟行走机器人 机器人在一个无限大小的 XY 网格平面上行走，从点 (0, 0) 处开始出发，面向北方。该机器人可以接收以下三种类型的命令 commands ： -2 ：向左转 90</description>
+    </item>
+    
     <item>
       <title>最大矩形</title>
       <link>https://zhouqian0.github.io/algorithm/leetcode/85/</link>
